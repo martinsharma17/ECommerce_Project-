@@ -1,0 +1,131 @@
+﻿@using EcomProj.Model
+@model IEnumerable<Product>
+
+
+<style>
+        .none {
+            margin: auto;
+        }
+
+        .description-limit {
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+       /* search styling*/
+        .custom-height {
+    height: 40px; /* Adjust the height value as needed */
+}
+
+
+
+</style>
+
+<div class="container-fluid pb-5 ">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <img src="@Url.Content("~/images/default/ecomHome.png")" class="img-fluid" alt="Card image" style="height:500px">
+        </div>
+    </div>
+
+</div>
+    <div class="row p-3 ">
+        <div>
+    <form asp-action="SearchFunc" method="get">
+            @using (@Html.BeginForm("SearchFunc", "Home", FormMethod.Get))
+            {
+                <div class="input-group">
+                    @Html.TextBox("search", null, new { @class = "form-control custom-height",placeholder = "Enter the product your are looking for..." })
+                    <div class="input-group-append mx-2">
+                        <input type="submit" value="Search" class="btn btn-primary" />
+                    </div>
+                </div>
+            }
+    </form>
+</div>
+
+
+    </div>
+<div>
+
+    <h1>Popular Items</h1>
+    <div class="row p-10 pb-5 ">
+        @foreach (var product in Model)
+        {
+            @*        <div class="col-lg-3 col-md-12 mx-2">
+        *@        <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="row p-2">
+                    <div class="col-12 p-1">
+                        <div class="card p-2 border-black">
+                            <div class="col-12 text-center pb-2">
+                                <span class="badge bg-info">@product.Category.Name</span>
+                                <span class="badge bg-warning">@product.SubCategory.Name</span>
+                            </div>
+                            <img src="@product.Image" class="card-img-top rounded" height="200px" width="250px" />
+                            <div class=" card-body">
+                                <div class="pl-1">
+                                    <p class="card-title h5 text-primary text-center"><b>@product.Name</b></p>
+
+
+                                </div>
+                                <div class="pl-1">
+                                    <p class="card-title text-info text-primary description-limit">@product.Description</p>
+
+                                </div>
+
+                                <div class="pl-1">
+                                    <p>ListPrice: <strike><b>$@product.FixedPrice.ToString("0.00")</b></strike></p>
+                                </div>
+                                <div class="pl-1">
+                                    <p>Discount Price: <b>$@product.DiscountPrice.ToString("0.00")</b></p>
+                                </div>
+                                @*
+                            <div class="col-12 text-center pb-2">
+                            <span class="badge bg-info">@product.Category.Name</span>
+                            <span class="badge bg-warning">@product.SubCategory.Name</span>
+                            </div>*@
+
+                            </div>
+                            <div class="card-footer">
+                                <div class="row my-1">
+                                    <div class="col-6">
+                                        <a asp-action="Details" class="btn btn-primary form-control" asp-route-productId="@product.Id">
+                                            Details
+                                        </a>
+                                    </div>
+                                    <div class="col-6">
+                                        <a asp-action="Details" class="btn btn-primary form-control" asp-route-productId="@product.Id">
+                                            Wishlist
+                                        </a>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        @*            <div class="row my-1">
+                    <div class="col-6">
+                    <a asp-action="Details" class="btn btn-primary form-control" asp-route-productId = "@product.Id">
+                    Details
+                    </a>
+                    </div>
+                    <div class="col-6">
+                    <a asp-action="Details" class="btn btn-primary form-control" asp-route-productId = "@product.Id">
+                    Wishlist
+                    </a>
+                    </div>
+                    </div>*@
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+</div>
+
+
+
+
+

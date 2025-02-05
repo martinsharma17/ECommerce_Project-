@@ -1,0 +1,64 @@
+﻿@using EcomProj.Model
+@model IEnumerable<Product>
+
+
+<div class = "row pb-3">
+    <div class="row pt-4 text-end">
+                
+                @using (@Html.BeginForm("SearchFunc","Home", FormMethod.Get))
+                {
+                   @Html.TextBox("search") <input type="submit" value="search" />
+
+                }
+    </div>
+
+    @if(Model.Count() == 0)
+    {
+        <h5 style="color:red;">Fine Not Found!!!</h5>
+        <br />
+        <p>Please enter the valid License Number</p>
+    }
+
+<div class = "row p-10 pb-5 ">
+    @foreach (var product in Model)
+    {
+@*        <div class="col-lg-3 col-md-12 mx-2">
+*@        <div class="col-lg-3 col-md-4 col-sm-6" >
+            <div class="row p-2">
+                <div class="col-12 p-1" style="border:1px solid black">
+                    <div class="card p-2">
+                        <img src="@product.Image" class="card-img-top rounded p-2" height="200px" width="250px"/>
+                        <div class=" card-body">
+                            <div class="pl-1">
+                                <p class="card-title h5 text-primary text-center"><b>@product.Name</b></p>
+                                <p class="card-title text-info text-primary description-limit">@product.Description</p>
+
+                            </div>
+                            <div class="pl-1">
+                                <p>ListPrice: <strike><b>$@product.FixedPrice.ToString("0.00")</b></strike></p>
+                            </div>        
+                            <div class="pl-1">
+                                <p>Discount Price: <b>$@product.DiscountPrice.ToString("0.00")</b></p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="row my-1">
+                    <div class="col-6">
+                        <a asp-action="Details" class="btn btn-primary form-control" asp-route-productId = "@product.Id">
+                        Details
+                        </a>
+                    </div>      
+                    <div class="col-6">
+                        <a asp-action="Details" class="btn btn-primary form-control" asp-route-productId = "@product.Id">
+                        Wishlist
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+</div>

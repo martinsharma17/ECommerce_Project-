@@ -1,0 +1,170 @@
+﻿@*
+    <style>
+        /* Adjust map height */
+        #map {
+            height: 400px;
+        }
+    </style>
+<div>   <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Your Store</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Store Location -->
+                <h2>Our Location</h2>
+                <div id="map"></div>
+                <!-- Replace the map initialization script with your own Google Maps API key -->
+                <script>
+                    function initMap() {
+                        var storeLocation = { lat: 37.7749, lng: -122.4194 };
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                            center: storeLocation,
+                            zoom: 13
+                        });
+                        var marker = new google.maps.Marker({
+                            position: storeLocation,
+                            map: map,
+                            title: 'Our Store'
+                        });
+                    }
+                </script>
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+            </div>
+
+
+            <div class="col-md-6 pb-4">
+                <!-- Founders -->
+                <h2>Our Founders</h2>
+                <div class="card-deck">
+                    <div class="card">
+                        <img src="@Url.Content("~/images/default/bbek.jpg")" class="card-img-top" alt="Founder 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Bibek Parajuli</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="founder2.jpg" class="card-img-top" alt="Saman Raut">
+                        <div class="card-body">
+                            <h5 class="card-title">Founder 2</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <h2>Our Services</h2>
+                <ul class="list-group">
+                    <li class="list-group-item">Service 1</li>
+                    <li class="list-group-item">Service 2</li>
+                    <li class="list-group-item">Service 3</li>
+                    <li class="list-group-item">Service 4</li>
+                    <li class="list-group-item">Service 5</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div> 
+*@
+
+
+    <style>
+        #map {
+            height: 400px; /* Adjust the height as needed */
+            width: 100%;
+        }
+    </style>
+<div>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">About Us</a>
+    </nav>
+
+    <!-- Google Map section -->
+    <div id="map"></div>
+
+    <!-- Founders section -->
+    <section class="container my-5">
+        <h2 class="text-center">Founders</h2>
+        <div class="row mt-4">
+            <div class="col-6">
+                <div class="card">
+                    <img src="@Url.Content("~/images/default/x.jpg")" class="card-img-top" alt="Founder 1" style="height:600px">
+                    <div class="card-body">
+                        <h5 class="card-title">Martin Sharma </h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere justo eget tellus feugiat luctus.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card">
+                    <img src="@Url.Content("~/images/default/.jpg")" class="card-img-top" alt="Founder 1" style="height:600px">
+                    <div class="card-body">
+                        <h5 class="card-title">Martin Sharma</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere justo eget tellus feugiat luctus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services section -->
+    <section class="container my-5">
+        <h2 class="text-center">Our Services</h2>
+        <div class="row mt-4">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Service 1</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere justo eget tellus feugiat luctus.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Service 2</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere justo eget tellus feugiat luctus.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Service 3</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere justo eget tellus feugiat luctus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include necessary JavaScript libraries -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script>
+        function initMap() {
+            // Set the map options
+            var mapOptions = {
+                center: {lat: YOUR_LATITUDE, lng: YOUR_LONGITUDE},
+                zoom: YOUR_ZOOM_LEVEL
+            };
+
+            // Create a new map instance
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        }
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Call the initMap() function when the page loads
+        window.onload = function() {
+            initMap();
+        };
+    </script>
+<</div>
