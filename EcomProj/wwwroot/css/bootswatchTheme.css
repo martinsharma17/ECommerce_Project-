@@ -4416,11 +4416,12 @@ textarea.form-control-lg {
   background-clip: border-box;
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   border-radius: var(--bs-card-border-radius);
-}
+/*}
 .card > hr {
   margin-right: 0;
   margin-left: 0;
 }
+
 .card > .list-group {
   border-top: inherit;
   border-bottom: inherit;
@@ -4532,7 +4533,7 @@ textarea.form-control-lg {
 
 .card-group > .card {
   margin-bottom: var(--bs-card-group-margin);
-}
+}*/
 @media (min-width: 576px) {
   .card-group {
     display: flex;

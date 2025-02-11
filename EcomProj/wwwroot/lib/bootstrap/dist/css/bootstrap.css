@@ -4441,17 +4441,47 @@ textarea.form-control-lg {
   color: #fff;
 }
 
-.card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.25rem;
+/* Card hover box-shadow */
+.card:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset !important;
 }
+
+/* Reduce gap between price, "Add to Cart" button, and other details */
+.card-body {
+    padding: 1rem !important; /* Adjust the padding for card-body */
+}
+
+    /* Adjust gap between price elements */
+    .card-body h5 {
+        margin-bottom: 0.5rem !important; /* Reduce space between price, discount, etc. */
+    }
+
+/* Adjust gap for the "Add to Cart" button */
+.footer {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+    .footer .row {
+        margin-bottom: 0.5rem !important; /* Reduce gap between footer items */
+    }
+
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+    .card:hover {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
+
 .card > hr {
   margin-right: 0;
   margin-left: 0;
@@ -4481,7 +4511,7 @@ textarea.form-control-lg {
 }
 
 .card-title {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
 }
 
 .card-subtitle {

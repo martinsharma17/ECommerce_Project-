@@ -1,6 +1,7 @@
 ﻿@using EcomProj.Model
 @model ShoppingCart
 
+
 <form method="post">
     <div class="container mt-5">
         <div class="card">
@@ -31,13 +32,13 @@
                                 <div><h4>Quantity</h4></div>
                                 <div><input asp-for="Count" class="form-control" min="1" max="15" /></div>
                             </div>
-                            @*  <div class="row pl-2">
+                             <div class="row pl-2">
                             <p class="text-muted">@Html.Raw(Model.Product.Description)</p>
-                            </div>*@
+                            </div>
                         </div>
-                        <div class="row pl-2 pt-4">
-                            <p class="">@Html.Raw(Model.Product.Description)</p>
-                        </div>
+                        @* <div class="row pl-2 pt-4"> *@
+                        @*     <p class="">@Html.Raw(Model.Product.Description)</p> *@
+                        @* </div> *@
                         </div>
 
 
@@ -59,3 +60,17 @@
         </div>
     </div>
 </form>
+
+<style>
+    /* Default Card Style */
+    .card {
+        transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+        box-shadow: 5px 5px 15px rgba(2, 3, 0, 0.32); /* Default shadow */
+    }
+
+        /* Remove Shadow on Hover */
+        .card:hover {
+            
+            box-shadow: rgba(0, 2, 2, 0.23) 0px 3px 8px !important;
+        }
+</style>
