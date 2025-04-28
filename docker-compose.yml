@@ -1,0 +1,6 @@
+services:
+  ecomproj:
+    image: ${DOCKER_REGISTRY-}ecomproj
+    build:
+      context: .
+      dockerfile: EcomProj\Dockerfile
