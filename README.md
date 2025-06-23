@@ -1,1 +1,1 @@
-This os my Ecommerce Project using ASP.NET woth payment gateway integration 
+This is my Ecommerce Project using ASP.NET with payment gateway integration 
